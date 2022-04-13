@@ -1,0 +1,804 @@
+fileFormatVersion: 2
+guid: aec3145c3bbd3f443895eefee07a2d11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6915422864844671306
+    second: Ukraine_0
+  - first:
+      213: 8601754406624260915
+    second: Ukraine_1
+  - first:
+      213: -1904384109974964405
+    second: Ukraine_2
+  - first:
+      213: 4994803647901725407
+    second: Ukraine_3
+  - first:
+      213: -8139852665558928406
+    second: Ukraine_4
+  - first:
+      213: -7912608648768283531
+    second: Ukraine_5
+  - first:
+      213: -5358819836712243951
+    second: Ukraine_6
+  - first:
+      213: 1556792662108475339
+    second: Ukraine_7
+  - first:
+      213: 3453479111784996756
+    second: Ukraine_8
+  - first:
+      213: 2943120355198596721
+    second: Ukraine_9
+  - first:
+      213: -6536606777829612705
+    second: Ukraine_10
+  - first:
+      213: -6981272730077036478
+    second: Ukraine_11
+  - first:
+      213: -8523865601412079371
+    second: Ukraine_12
+  - first:
+      213: 606116075380160215
+    second: Ukraine_13
+  - first:
+      213: 6508559982284379203
+    second: Ukraine_14
+  - first:
+      213: 7616869221087291239
+    second: Ukraine_15
+  - first:
+      213: -1821099772365651297
+    second: Ukraine_16
+  - first:
+      213: -807374519862788527
+    second: Ukraine_17
+  - first:
+      213: -1443945554519493111
+    second: Ukraine_18
+  - first:
+      213: -409854933061186112
+    second: Ukraine_19
+  - first:
+      213: -793768366800699548
+    second: Ukraine_20
+  - first:
+      213: -3283342479099432494
+    second: Ukraine_21
+  - first:
+      213: -1317683119639895153
+    second: Ukraine_22
+  - first:
+      213: 8475600422994519937
+    second: Ukraine_23
+  - first:
+      213: 2422420427784267289
+    second: Ukraine_24
+  - first:
+      213: -1225424657910228427
+    second: Ukraine_25
+  - first:
+      213: 2925515941276012220
+    second: Ukraine_26
+  - first:
+      213: 8487843381905758898
+    second: Ukraine_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ukraine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6b15d3b8b7700a0800000000000000
+      internalID: -6915422864844671306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3337dfb0f029f5770800000000000000
+      internalID: 8601754406624260915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b473b09edb44295e0800000000000000
+      internalID: -1904384109974964405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2f104447b115540800000000000000
+      internalID: 4994803647901725407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3f751a02f690f80800000000000000
+      internalID: -8139852665558928406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_5
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c9b735b54c03290800000000000000
+      internalID: -7912608648768283531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d237130c5a1a5b0800000000000000
+      internalID: -5358819836712243951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf09ed8da6da9510800000000000000
+      internalID: 1556792662108475339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_8
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f1d2174f83def20800000000000000
+      internalID: 3453479111784996756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_9
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17675d6ae5018d820800000000000000
+      internalID: 2943120355198596721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_10
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f532e0b94ce4945a0800000000000000
+      internalID: -6536606777829612705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_11
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24003abb0798d1f90800000000000000
+      internalID: -6981272730077036478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_12
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f069aa956525b980800000000000000
+      internalID: -8523865601412079371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_13
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d630b5fb5b596800800000000000000
+      internalID: 606116075380160215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344126fe1dc035a50800000000000000
+      internalID: 6508559982284379203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767a38f533e84b960800000000000000
+      internalID: 7616869221087291239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_16
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92c997d7672ab6e0800000000000000
+      internalID: -1821099772365651297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_17
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e70eed621abc4f0800000000000000
+      internalID: -807374519862788527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_18
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9067cd32b2316fbe0800000000000000
+      internalID: -1443945554519493111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_19
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd42712c17ef4af0800000000000000
+      internalID: -409854933061186112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_20
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ff6ee30e7fbf4f0800000000000000
+      internalID: -793768366800699548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1f35149693f62d0800000000000000
+      internalID: -3283342479099432494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_22
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83e55f1f26a6bde0800000000000000
+      internalID: -1317683119639895153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_23
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1872db6dda16f9570800000000000000
+      internalID: 8475600422994519937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_24
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9162bb66b8a2e9120800000000000000
+      internalID: 2422420427784267289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_25
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a914624ca6efee0800000000000000
+      internalID: -1225424657910228427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_26
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbecf70af35899820800000000000000
+      internalID: 2925515941276012220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ukraine_27
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba94a7d590eac570800000000000000
+      internalID: 8487843381905758898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
