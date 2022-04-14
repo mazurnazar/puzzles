@@ -1,114 +1,190 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePuzzle : MonoBehaviour
 {
-    public bool isMoving;
-    public bool isNeibor;
-    public float offset = .2f;
-    public float offset2 = 2.8f;
-    public GameObject neibor;
+    bool isMoving;
+    public bool canMove;
+    bool isNeibor;
+    float offset = .2f;
+    float offset2;
+    GameObject neibor;
+    public Puzzle puzzle;
+    public BoxCollider2D boxCollider2D;
+    public Rigidbody2D rigidbody2D;
+    public SpriteRenderer spriteRenderer;
     private void Start()
     {
-
+         
+        puzzle = GetComponent<Puzzle>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        offset2 = boxCollider2D.size.x + offset;
     }
     private void OnMouseDrag()
     {
-        isMoving = true;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
-        if (mousePos.x < Screen.width / 2 && mousePos.x > -Screen.width / 2)
+        if (canMove)
         {
-            if (transform.parent != null)
-                transform.parent.position = mousePos;
-            else transform.position = mousePos;
-            GetComponent<SpriteRenderer>().sortingOrder = 1;
+            spriteRenderer.color = Color.green;
+            isMoving = true;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f;
+            if (mousePos.x < Screen.width / 2 && mousePos.x > -Screen.width / 2)
+            {
+                if (transform.parent != null)
+                    transform.parent.position = mousePos;
+                else transform.position = mousePos;
+                GetComponent<SpriteRenderer>().sortingOrder = 1;
+            }
         }
-    }
+   }
     private void OnMouseUp()
     {
         GetComponent<SpriteRenderer>().sortingOrder = 0;
         isMoving = false;
+
+        float distance = Vector2.Distance(transform.position, transform.GetComponent<Puzzle>().originalPos);
+
+        if (distance < 0.5f)
+        {
+            transform.position = transform.GetComponent<Puzzle>().originalPos;
+            rigidbody2D.simulated = false;
+            
+            if (transform.parent != null) // item has parent
+            {
+                Debug.Log("has parent");
+                transform.parent.GetComponent<Rigidbody2D>().simulated = false;
+
+                transform.parent.position = transform.parent.GetComponent<Puzzle>().originalPos;
+                DeactivatePuzzles(transform.parent);
+            }
+            else // item doesnt have parent
+            {
+                Debug.Log("no parent");
+                transform.GetComponentInChildren<Rigidbody2D>().simulated = false;
+                transform.GetComponentInChildren<Transform>().position = transform.GetComponentInChildren<Puzzle>().originalPos;
+                DeactivatePuzzles(transform);
+            }
+
+        }
+        spriteRenderer.color = Color.white;
     }
-    private void OnMouseDown()
+    void DeactivatePuzzles(Transform transform)
     {
-           // SetParent();
+        var rowParent = transform.GetComponent<Puzzle>().row;
+        var colParent = transform.GetComponent<Puzzle>().col;
+
+        Debug.Log("" + transform.childCount);
+        int i = 0;
+        foreach (Transform item in transform.GetComponentInChildren<Transform>())
+        {
+            item.position = item.GetComponent<Puzzle>().originalPos;
+           // item.SetParent(null);
+            item.GetComponent<Rigidbody2D>().simulated = false;
+
+            Debug.Log("itearaion " + i);
+            i++;
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isMoving&&other.gameObject.tag == "puzzle")
+        if (isMoving && other.gameObject.tag == "puzzle") 
         {
-            Debug.Log(other.gameObject.name);
             neibor = other.gameObject;
-            IsNeighbour(other.gameObject, this.gameObject);
-            
+            IsNeighbour(other.gameObject);
         }
-
-            
     }
-    void IsNeighbour(GameObject first, GameObject second)
+    void IsNeighbour(GameObject other)
     {
-        int rowFirst = first.GetComponent<Puzzle>().row;
-        int colFirst = first.GetComponent<Puzzle>().col;
-        int rowSecond = second.GetComponent<Puzzle>().row;
-        int colSecond = second.GetComponent<Puzzle>().col;
+        int rowOther = other.GetComponent<Puzzle>().row;
+        int colOther = other.GetComponent<Puzzle>().col;
+        int rowThis = puzzle.row;
+        int colThis = puzzle.col;
 
-        if (rowFirst == rowSecond)
+        if (rowOther == rowThis)
         {
-            if(colFirst == colSecond+1|| colFirst == colSecond - 1)
+            if(colOther == colThis+1)
             {
-              ComparePositionsX(first, second);
+              ComparePositionsX(other, "right");
+            }
+            else if(colOther == colThis - 1)
+            {
+                ComparePositionsX(other, "left");
             }
         }
 
-        if (colFirst == colSecond)
+        if (colOther == colThis)
         {
-            if (rowFirst == rowSecond + 1 || rowFirst == rowSecond - 1)
+            if (rowOther == rowThis + 1  )
             {
-               ComparePositionsY(first, second);
+               ComparePositionsY(other, "up");
+            }
+            else if (rowOther == rowThis - 1)
+            {
+                ComparePositionsY(other, "down");
             }
         }
     }
-    void ComparePositionsX(GameObject first, GameObject second)
+
+    void ComparePositionsX(GameObject other, string direction)
     {
-        float differenceX = second.transform.position.x - first.transform.position.x;
-        float differenceY = second.transform.position.y - first.transform.position.y;
+        float differenceX = transform.position.x - other.transform.position.x;
+        float differenceY = transform.position.y - other.transform.position.y;
+
         if (differenceY < offset && differenceY > -offset)
         {
-            if (Mathf.Abs(differenceX) < offset2 && Mathf.Abs(differenceX) > 1)
+            if(direction == "left")
             {
-                SetParent();
-                if(differenceX<1)
-                second.transform.position = first.transform.position - new Vector3(transform.GetComponent<BoxCollider2D>().size.x, 0);
-                else second.transform.position = first.transform.position + new Vector3(transform.GetComponent<BoxCollider2D>().size.x, 0);
+                if (differenceX > 0)
+                {
+                    SetParent();
+                    transform.position = other.transform.position + new Vector3(boxCollider2D.size.x, 0);
+                }
+            }
+            else 
+            {
+                if (differenceX < 0)
+                {
+                    SetParent();
+                    transform.position = other.transform.position - new Vector3(boxCollider2D.size.x, 0);
+                }
             }
         }
     }
-   void ComparePositionsY(GameObject first, GameObject second)
+   void ComparePositionsY(GameObject other, string direction)
     {
-        float differenceX = second.transform.position.x - first.transform.position.x;
-        float differenceY = second.transform.position.y - first.transform.position.y;
+        float differenceX = transform.position.x - other.transform.position.x;
+        float differenceY = transform.position.y - other.transform.position.y;
 
-        if (differenceX < offset && differenceX > -offset)
+        if (differenceX < offset && differenceX > -offset) // if  -offset < x < offset
         {
-            if (Mathf.Abs(differenceY) < offset2 && Mathf.Abs(differenceY) > 1)
+            if (direction == "down")
             {
-                SetParent();
-                if(differenceY<0)
-                second.transform.position = first.transform.position -  new Vector3(0, transform.GetComponent<BoxCollider2D>().size.y);
-                else second.transform.position = first.transform.position +  new Vector3(0, transform.GetComponent<BoxCollider2D>().size.y);
-
+                if (differenceY < 0) // if  y<0 
+                {
+                    SetParent();
+                    transform.position = other.transform.position - new Vector3(0, boxCollider2D.size.y);
+                }
+            }
+            else
+            {
+                if (differenceY > 0)
+                {
+                    SetParent();
+                    transform.position = other.transform.position + new Vector3(0, boxCollider2D.size.y);
+                }
             }
         }
     }
+
     void SetParent()
     {
         if (neibor.transform.parent != null)
             this.transform.SetParent(neibor.transform.parent);
         else this.transform.SetParent(neibor.transform);
     }
-   
-
-
 }
