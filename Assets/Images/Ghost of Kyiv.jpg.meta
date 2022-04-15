@@ -1,0 +1,804 @@
+fileFormatVersion: 2
+guid: 2112ea10b1a4bd543821296831b7aced
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -603687402908643731
+    second: Ghost of Kyiv_0
+  - first:
+      213: 6333559841006312176
+    second: Ghost of Kyiv_1
+  - first:
+      213: -224549567315926641
+    second: Ghost of Kyiv_2
+  - first:
+      213: 1621721983439277032
+    second: Ghost of Kyiv_3
+  - first:
+      213: -6551517522068625711
+    second: Ghost of Kyiv_4
+  - first:
+      213: -2466163865630976885
+    second: Ghost of Kyiv_5
+  - first:
+      213: 4534784757998094312
+    second: Ghost of Kyiv_6
+  - first:
+      213: 7251417075392322485
+    second: Ghost of Kyiv_7
+  - first:
+      213: -5559839079669579947
+    second: Ghost of Kyiv_8
+  - first:
+      213: -7373843414120159603
+    second: Ghost of Kyiv_9
+  - first:
+      213: -7261978858526643741
+    second: Ghost of Kyiv_10
+  - first:
+      213: 618625047109415039
+    second: Ghost of Kyiv_11
+  - first:
+      213: 6747344453101048589
+    second: Ghost of Kyiv_12
+  - first:
+      213: 4095328688983508326
+    second: Ghost of Kyiv_13
+  - first:
+      213: -2691529518045014871
+    second: Ghost of Kyiv_14
+  - first:
+      213: 6300584997607339584
+    second: Ghost of Kyiv_15
+  - first:
+      213: -7660795463273638826
+    second: Ghost of Kyiv_16
+  - first:
+      213: 4543881449801464176
+    second: Ghost of Kyiv_17
+  - first:
+      213: -936526739447057774
+    second: Ghost of Kyiv_18
+  - first:
+      213: 8638226370311579526
+    second: Ghost of Kyiv_19
+  - first:
+      213: -7126698820197853479
+    second: Ghost of Kyiv_20
+  - first:
+      213: -4252334086621415505
+    second: Ghost of Kyiv_21
+  - first:
+      213: 1003900937089218750
+    second: Ghost of Kyiv_22
+  - first:
+      213: 6224660672395693362
+    second: Ghost of Kyiv_23
+  - first:
+      213: -84737704817845723
+    second: Ghost of Kyiv_24
+  - first:
+      213: 70319722934269822
+    second: Ghost of Kyiv_25
+  - first:
+      213: -8530314034530276003
+    second: Ghost of Kyiv_26
+  - first:
+      213: -5969898653207150425
+    second: Ghost of Kyiv_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ghost of Kyiv_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e804a61854f97f0800000000000000
+      internalID: -603687402908643731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa5cd66e1355e750800000000000000
+      internalID: 6333559841006312176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81aaa5bb5d32ecf0800000000000000
+      internalID: -224549567315926641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb075b3d83818610800000000000000
+      internalID: 1621721983439277032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d62a5d66855415a0800000000000000
+      internalID: -6551517522068625711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_5
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84592fc70d66cdd0800000000000000
+      internalID: -2466163865630976885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 810
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7055906baceee30800000000000000
+      internalID: 4534784757998094312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb16f0196532a460800000000000000
+      internalID: 7251417075392322485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_8
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fb5f770db77d2b0800000000000000
+      internalID: -5559839079669579947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_9
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86a300bb78daa990800000000000000
+      internalID: -7373843414120159603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_10
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e96f1b24b4483b90800000000000000
+      internalID: -7261978858526643741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_11
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70bd16e33cc59800800000000000000
+      internalID: 618625047109415039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_12
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d035a48f70263ad50800000000000000
+      internalID: 6747344453101048589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_13
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 540
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6650451aeb785d830800000000000000
+      internalID: 4095328688983508326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4d276e924c5aad0800000000000000
+      internalID: -2691529518045014871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0467a836cac207750800000000000000
+      internalID: 6300584997607339584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_16
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65496a26d136fa590800000000000000
+      internalID: -7660795463273638826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_17
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07937e4aa1c1f0f30800000000000000
+      internalID: 4543881449801464176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_18
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2927a9474e9c003f0800000000000000
+      internalID: -936526739447057774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_19
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68765d3dd1521e770800000000000000
+      internalID: 8638226370311579526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_20
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 270
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d659e09e21e81d90800000000000000
+      internalID: -7126698820197853479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa735a49dacacf4c0800000000000000
+      internalID: -4252334086621415505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_22
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb872e855929eed00800000000000000
+      internalID: 1003900937089218750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_23
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d4d71e6ef626650800000000000000
+      internalID: 6224660672395693362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_24
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a1045a183f2def0800000000000000
+      internalID: -84737704817845723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_25
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77733a5a63d9f000800000000000000
+      internalID: 70319722934269822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_26
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d2b45c49c3e9980800000000000000
+      internalID: -8530314034530276003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost of Kyiv_27
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 274.2857
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a041860ec8a62da0800000000000000
+      internalID: -5969898653207150425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

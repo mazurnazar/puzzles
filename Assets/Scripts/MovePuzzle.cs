@@ -8,16 +8,19 @@ public class MovePuzzle : MonoBehaviour
     bool isMoving;
     public bool canMove;
     bool isNeibor;
-    float offset = .2f;
+    float offset;
     float offset2;
     GameObject neibor;
-    public Puzzle puzzle;
-    public BoxCollider2D boxCollider2D;
-    public Rigidbody2D rigidbody2D;
-    public SpriteRenderer spriteRenderer;
+    Puzzle puzzle;
+    BoxCollider2D boxCollider2D;
+    new Rigidbody2D rigidbody2D;
+    SpriteRenderer spriteRenderer;
+    GameManager gameManager;
+     float xRange = 16, yMinRange = -8.5f, yMaxRange = 6;
     private void Start()
     {
-         
+        offset = .2f;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         puzzle = GetComponent<Puzzle>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -26,13 +29,15 @@ public class MovePuzzle : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (canMove)
+        if (canMove && gameManager.isGameRunning) 
         {
             spriteRenderer.color = Color.green;
             isMoving = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             mousePos.z = 0f;
-            if (mousePos.x < Screen.width / 2 && mousePos.x > -Screen.width / 2)
+            
+            if (mousePos.x < xRange && mousePos.x > -xRange && mousePos.y < yMaxRange && mousePos.y > yMinRange)
             {
                 if (transform.parent != null)
                     transform.parent.position = mousePos;
@@ -51,41 +56,37 @@ public class MovePuzzle : MonoBehaviour
         if (distance < 0.5f)
         {
             transform.position = transform.GetComponent<Puzzle>().originalPos;
-            rigidbody2D.simulated = false;
+            transform.GetComponent<BoxCollider2D>().enabled = false;
+           // rigidbody2D.simulated = false;
+            canMove = false;
+            spriteRenderer.sortingOrder = -1;
             
             if (transform.parent != null) // item has parent
             {
-                Debug.Log("has parent");
-                transform.parent.GetComponent<Rigidbody2D>().simulated = false;
-
+               // transform.parent.GetComponent<Rigidbody2D>().simulated = false;
+                transform.parent.GetComponent<MovePuzzle>().canMove = false;
                 transform.parent.position = transform.parent.GetComponent<Puzzle>().originalPos;
+                transform.parent.GetComponent<BoxCollider2D>().enabled = false;
                 DeactivatePuzzles(transform.parent);
             }
             else // item doesnt have parent
             {
-                Debug.Log("no parent");
-                transform.GetComponentInChildren<Rigidbody2D>().simulated = false;
-                transform.GetComponentInChildren<Transform>().position = transform.GetComponentInChildren<Puzzle>().originalPos;
                 DeactivatePuzzles(transform);
             }
-
         }
         spriteRenderer.color = Color.white;
     }
     void DeactivatePuzzles(Transform transform)
     {
-        var rowParent = transform.GetComponent<Puzzle>().row;
-        var colParent = transform.GetComponent<Puzzle>().col;
-
-        Debug.Log("" + transform.childCount);
         int i = 0;
         foreach (Transform item in transform.GetComponentInChildren<Transform>())
         {
             item.position = item.GetComponent<Puzzle>().originalPos;
-           // item.SetParent(null);
-            item.GetComponent<Rigidbody2D>().simulated = false;
-
-            Debug.Log("itearaion " + i);
+            item.GetComponent<BoxCollider2D>().enabled = false;
+          //  item.GetComponent<Rigidbody2D>().simulated = false;
+            item.GetComponent<MovePuzzle>().canMove = false;
+            item.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            
             i++;
         }
     }
@@ -183,8 +184,11 @@ public class MovePuzzle : MonoBehaviour
 
     void SetParent()
     {
-        if (neibor.transform.parent != null)
+        if (neibor.transform.parent != null && neibor.transform.parent.GetComponent<MovePuzzle>().canMove)
+        {
             this.transform.SetParent(neibor.transform.parent);
-        else this.transform.SetParent(neibor.transform);
+        }
+        else if(neibor.transform.GetComponent<MovePuzzle>().canMove) 
+            this.transform.SetParent(neibor.transform);
     }
 }
