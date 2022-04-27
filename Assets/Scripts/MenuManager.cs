@@ -7,16 +7,26 @@ using System.IO;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    public bool[] levels;
-    public float[] time;
-    public Sprite locked;
+    private bool[] levels;
+    public bool[] Levels { get => levels; set { levels = value; } }
+    private float[] time;
+    public float[] Time { get => time; set { time = value; } }
+    [SerializeField] private Sprite locked;
+    public Sprite Locked { get => locked; set { locked = value; } }
+    private const int totalLevels = 7;
+    public int TotalLevels { get => totalLevels; private set { } }
+    [SerializeField] private Data background;
+    public Data Background { get => background; private set { } }
+    private bool isSoundOn = true;
 
-    public Data background;
+    public bool IsSoundOn { get => isSoundOn;  set { isSoundOn = value; } }
+
+    [SerializeField] private GameObject Title;
 
     private void Awake()
     {
-        levels = new bool[6] {false, true,  true, true, true, true };
-        time = new float[6] { 0f, 0f, 0f, 0f, 0f, 0f };
+        levels = new bool[totalLevels] {false, true,  true, true, true, true, true };
+        time = new float[totalLevels] { 0f, 0f, 0f, 0f, 0f, 0f, 0f};
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -25,7 +35,19 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         LoadInfo();
-        
+        Debug.Log(Application.persistentDataPath);
+    }
+    private void Start()
+    {
+        StartCoroutine(ShowTitle());
+
+    }
+    IEnumerator ShowTitle()
+    {
+        Title.SetActive(true);
+        yield return new WaitForSeconds(1);
+        Title.SetActive(false);
+
     }
     public void SaveInfo()
     {
@@ -57,7 +79,7 @@ public class MenuManager : MonoBehaviour
     [System.Serializable]
     class SaveData
     {
-        public bool[] levels = new bool[6];
-        public float[] time = new float[6];
+        public bool[] levels = new bool[totalLevels];
+        public float[] time = new float[totalLevels];
     }
 }

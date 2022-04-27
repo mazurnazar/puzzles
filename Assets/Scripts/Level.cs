@@ -7,21 +7,21 @@ using UnityEngine.EventSystems;
 
 public class Level : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public int levelNumber;
+    [SerializeField] private int levelNumber;
     public static int lvlNum;
-    public bool isLocked;
+    [SerializeField ] private bool isLocked;
     private void Start()
     {
         MenuManager.Instance.LoadInfo();
-        isLocked = MenuManager.Instance.levels[levelNumber];
+        isLocked = MenuManager.Instance.Levels[levelNumber];
 
         if (isLocked)
         {
-            this.GetComponent<Image>().sprite = MenuManager.Instance.locked;
+            this.GetComponent<Image>().sprite = MenuManager.Instance.Locked;
         }
         else
         {
-            this.GetComponent<Image>().sprite = MenuManager.Instance.background.Sprites[levelNumber];
+            this.GetComponent<Image>().sprite = MenuManager.Instance.Background.Sprites[levelNumber];
         }
     }
 
