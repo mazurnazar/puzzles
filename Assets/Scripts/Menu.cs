@@ -44,12 +44,12 @@ public class Menu : MonoBehaviour
         {
             music.SetActive(true);
             sound.SetActive(true);
-            donate.SetActive(true);
+           // donate.SetActive(true);
         }else
         {
             music.SetActive(false);
             sound.SetActive(false);
-            donate.SetActive(false);
+           // donate.SetActive(false);
         }
     }
 

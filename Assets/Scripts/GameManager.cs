@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private Initialize init;
     private Timer timer;
     private bool isGameOver;
-    private GameObject[] puzzles;
+    [SerializeField] private GameObject[] puzzles;
 
     private bool isGameRunning;
     public bool IsGameRunning { get => isGameRunning; private set { } }
@@ -64,22 +64,21 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         gameOverText.text = "Win";
         isGameOver = true;
-        timer.timerIsRunning = false;
-        MenuManager.Instance.Levels[Level.lvlNum+1] = false;
+        timer.TimerIsRunning = false;
+        if (Level.lvlNum < MenuManager.Instance.Levels.Length-1)
+        {
+            MenuManager.Instance.Levels[Level.lvlNum + 1] = false;
+        }
         CheckBestTime();
-        MenuManager.Instance.SaveInfo();
         //ads.ShowInterstitialAd();
     }
     void CheckBestTime()
     {
-        if (MenuManager.Instance.Time[Level.lvlNum] == 0)
+        if (MenuManager.Instance.Time[Level.lvlNum] == 0 || timer._Time < MenuManager.Instance.Time[Level.lvlNum])
         {
-            MenuManager.Instance.Time[Level.lvlNum] = timer.time;
+            MenuManager.Instance.Time[Level.lvlNum] = timer._Time;
         }
-        else if (timer.time < MenuManager.Instance.Time[Level.lvlNum])
-        {
-            MenuManager.Instance.Time[Level.lvlNum] = timer.time;
-        }
+        MenuManager.Instance.SaveInfo();
     }
     IEnumerator gameOver()
     {
@@ -89,7 +88,6 @@ public class GameManager : MonoBehaviour
             GameOver();
             StartCoroutine(gameOver());
         }
-
     }
     public void Difficulty()
     {
@@ -98,12 +96,12 @@ public class GameManager : MonoBehaviour
         else if (scrollbar.value < 0.75)
         {
             init.difficulty = Initialize.Difficulty.medium;
-            AngleToRotate = 180;
+            angleToRotate = 180;
         }
         else
         {
             init.difficulty = Initialize.Difficulty.hard;
-            AngleToRotate = 90;
+            angleToRotate = 90;
         }
     }
     public void ShuffleButton()
@@ -111,8 +109,8 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         startPanel.gameObject.SetActive(false); // deactivate button after press
         isGameRunning = true;
-        timer.timerIsRunning = true;
-        init.Shuffle();
+        timer.TimerIsRunning = true;
+        init.Shuffle(); 
         StartCoroutine(gameOver());
     }
     
@@ -134,13 +132,13 @@ public class GameManager : MonoBehaviour
         {
             pausePanel.gameObject.SetActive(true);
             isGameRunning = false;
-            timer.timerIsRunning = false;
+            timer.TimerIsRunning = false;
         }
         else
         {
             pausePanel.gameObject.SetActive(false);
             isGameRunning = true;
-            timer.timerIsRunning = true;
+            timer.TimerIsRunning = true;
         }
     }
     public void Hint()

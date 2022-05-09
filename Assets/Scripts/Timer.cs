@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text timerText;
-    public bool timerIsRunning = false;
-    public float time = 0;
-    public string timeText = "";
+    [SerializeField] private Text timerText;
+    private bool timerIsRunning = false;
+    private float time = 0;
+    private string timeText = "";
+
+    public bool TimerIsRunning { get => timerIsRunning; set { timerIsRunning = value; } }
+    
+    public float _Time { get => time;  set { time = value; } }
 
     private void Update()
     {

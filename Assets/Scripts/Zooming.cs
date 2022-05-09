@@ -5,20 +5,15 @@ using UnityEngine.UI;
 
 public class Zooming : MonoBehaviour
 {
-	private Camera mainCamera;
-
-	private float touchesPrevPosDifference, touchesCurPosDifference, zoomModifier;
-
-	private Vector2 firstTouchPrevPos, secondTouchPrevPos;
-
 	[SerializeField]
 	private float zoomModifierSpeed = 0.01f;
-
-	private Vector3 touchStart;
-
 	[SerializeField]
 	private SpriteRenderer backgroundRenderer;
-	
+
+	private Camera mainCamera;
+	private float touchesPrevPosDifference, touchesCurPosDifference, zoomModifier;
+	private Vector2 firstTouchPrevPos, secondTouchPrevPos;
+	private Vector3 touchStart;
 	private float mapMinX, mapMaxX, mapMinY, mapMaxY;
 	private GameManager gameManager;
 

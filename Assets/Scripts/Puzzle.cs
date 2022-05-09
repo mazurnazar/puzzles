@@ -7,6 +7,7 @@ public class Puzzle: MonoBehaviour
     private int row, col;
     private Vector2 originalPos;
     private Quaternion originalAngle;
+    public int currentAngle;
     private GameObject tile;
 
     public int Row { get => row; set { row = value; } }

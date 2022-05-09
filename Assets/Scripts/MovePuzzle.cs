@@ -9,35 +9,35 @@ public class MovePuzzle : MonoBehaviour
     private bool isMoving;
     public bool canMove;
     bool isNeibor;
-    private float offset, offset2;
+    private float offset;
+        //offset2;
     private GameObject neibor;
     private Puzzle puzzle;
-    private BoxCollider2D boxCollider2D;
-    private new Rigidbody2D rigidbody2D;
+   // private BoxCollider2D boxCollider2D;
     private GameManager gameManager;
     private const float xRange = 22, yMinRange = -10f, yMaxRange = 6;
     private const float distanceToOrigin = 0.7f;
     private float timeClick;
-
+    private float puzzleSize = 1.7f;
     private void Start()
     {
         offset = .2f;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         puzzle = GetComponent<Puzzle>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        offset2 = boxCollider2D.size.x + offset;
+      //  boxCollider2D = GetComponent<BoxCollider2D>();
+        //offset2 = puzzleSize + offset;
     }
     
+    // when you drag puzzle
     private void OnMouseDrag()
     {
-        if (canMove && gameManager.IsGameRunning) 
+        if (canMove && gameManager.IsGameRunning)  // if youv can move and game is running
         {
             
             isMoving = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
-
+            //if puzzle is in range of screen
             if (mousePos.x < xRange && mousePos.x > -xRange && mousePos.y < yMaxRange && mousePos.y > yMinRange)
             {
                 if (transform.parent != null && transform.parent.tag == "puzzle")
@@ -50,10 +50,14 @@ public class MovePuzzle : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        
+        // detect short click for rotate
         if (Time.time - timeClick < 0.2f && gameManager.IsGameRunning)
         {
-            transform.Rotate(0, 0, gameManager.AngleToRotate);
+            if(transform.parent!=null) transform.parent.Rotate(0, 0, gameManager.AngleToRotate);
+            else transform.Rotate(0, 0, gameManager.AngleToRotate);
+            transform.GetComponent<Puzzle>().currentAngle += gameManager.AngleToRotate;
+           
+            if (transform.GetComponent<Puzzle>().currentAngle >= 360) transform.GetComponent<Puzzle>().currentAngle -= 360; 
             gameManager.GetComponent<Sound>().PlaySound("rotate");
         }
         else
@@ -62,14 +66,17 @@ public class MovePuzzle : MonoBehaviour
             GetComponent<SortingGroup>().sortingOrder = 0;
             isMoving = false;
             float distance = Vector2.Distance(transform.position, transform.GetComponent<Puzzle>().OriginalPos);
+
+            // checking if puzzle is in its original position and if is then put it there and cannot move then
             if (distance < distanceToOrigin && (int)transform.eulerAngles.z == (int)transform.GetComponent<Puzzle>().OriginalAngle.eulerAngles.z)
             {
-                if (transform.parent != null) // item has parent
+                if (transform.parent != null) // if item has parent
                 {
-                    
+                    // set original pos og parent puzzle and deactivate it and its children
                     transform.parent.GetComponent<MovePuzzle>().canMove = false;
                     transform.parent.position = transform.parent.GetComponent<Puzzle>().OriginalPos;
                     transform.parent.GetComponent<BoxCollider2D>().enabled = false;
+                    transform.parent.GetComponent<SortingGroup>().sortingOrder = -1;
                     DeactivatePuzzles(transform.parent);
                 }
                 else // item doesnt have parent
@@ -88,13 +95,14 @@ public class MovePuzzle : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        // set time of click
         gameManager.PieceSelected = true;
         timeClick = Time.time;       
     }
     void DeactivatePuzzles(Transform transform)
     {
+        // deactivate puzzle and its children so they cant move
         var children = transform.GetComponentInChildren<Transform>();
-        
         foreach (Transform item in children)
         {
             if (item.transform.tag == "puzzle")
@@ -105,53 +113,115 @@ public class MovePuzzle : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isMoving && other.gameObject.tag == "puzzle") 
+        if (isMoving && collision.gameObject.tag == "puzzle"
+           && collision.GetComponent<Puzzle>().currentAngle == this.GetComponent<Puzzle>().currentAngle)
         {
-            neibor = other.gameObject;
-            IsNeighbour(other.gameObject);
+            if (Input.GetMouseButtonUp(0))
+            {
+                neibor = collision.gameObject;
+                IsNeighbour(collision.gameObject);
+            }
+            
+        }
+        
+    }
+    /* private void OnTriggerEnter2D(Collider2D other)
+     {
+         // if collides with other puzzle
+         if (isMoving && other.gameObject.tag == "puzzle" 
+             && other.GetComponent<Puzzle>().currentAngle == this.GetComponent<Puzzle>().currentAngle) 
+         {
+             neibor = other.gameObject;
+             IsNeighbour(other.gameObject);
+         }
+     }*/
+    void IsNeighbour(GameObject other)
+    {
+        switch(other.GetComponent<Puzzle>().currentAngle)
+        {
+            case 0:
+                AngleCompare(other, "right", "left", "up", "down");
+                break;
+            case 90:
+                AngleCompare(other, "left", "right", "up", "down");
+                break;
+            case 180:
+                AngleCompare(other, "left", "right", "down", "up");
+                break;
+            case 270:
+                AngleCompare(other, "righ", "left", "down", "up");
+                break;
         }
     }
-    void IsNeighbour(GameObject other)
+    // comparing in what angle position neibor puzzle is
+    void AngleCompare(GameObject other, string right, string left, string up, string down)
     {
         int rowOther = other.GetComponent<Puzzle>().Row;
         int colOther = other.GetComponent<Puzzle>().Col;
         int rowThis = puzzle.Row;
         int colThis = puzzle.Col;
 
-        if (rowOther == rowThis)
+        if (rowOther == rowThis) // if same row
         {
-            if(colOther == colThis+1)
+            if (other.GetComponent<Puzzle>().currentAngle == 90 || other.GetComponent<Puzzle>().currentAngle == 270)
             {
-              ComparePositionsX(other, "right");
+                if (colOther == colThis + 1) // if next column
+                {
+                    ComparePositionsY(other, down);
+                }
+                else if (colOther == colThis - 1) // if previous column
+                {
+                    ComparePositionsY(other, up);
+                }
             }
-            else if(colOther == colThis - 1)
+            else
             {
-                ComparePositionsX(other, "left");
+                if (colOther == colThis + 1)
+                {
+                    ComparePositionsX(other, right);
+                }
+                else if (colOther == colThis - 1)
+                {
+                    ComparePositionsX(other, left);
+                }
             }
         }
 
-        if (colOther == colThis)
+        if (colOther == colThis) // if same column
         {
-            if (rowOther == rowThis + 1  )
+            if (other.GetComponent<Puzzle>().currentAngle == 90 || other.GetComponent<Puzzle>().currentAngle == 270)
             {
-               ComparePositionsY(other, "up");
+                if (rowOther == rowThis + 1)// if next row
+                {
+                    ComparePositionsX(other, left);
+                }
+                else if (rowOther == rowThis - 1)// if previous row
+                {
+                    ComparePositionsX(other, right);
+                }
             }
-            else if (rowOther == rowThis - 1)
+            else
             {
-                ComparePositionsY(other, "down");
+                if (rowOther == rowThis + 1)
+                {
+                    ComparePositionsY(other, up);
+                }
+                else if (rowOther == rowThis - 1)
+                {
+                    ComparePositionsY(other, down);
+                }
             }
         }
     }
-
+    //comparing 'x' positions of two puzzles
     void ComparePositionsX(GameObject other, string direction)
     {
         float differenceX = transform.position.x - other.transform.position.x;
         float differenceY = transform.position.y - other.transform.position.y;
 
-        if (differenceY < offset && differenceY > -offset)
+        if (Mathf.Abs(differenceY) < offset )// if  -offset < y < offset
         {
             if((direction == "left" && differenceX > 0) || (direction == "right" && differenceX < 0))
             {
@@ -160,12 +230,13 @@ public class MovePuzzle : MonoBehaviour
             }
         }
     }
+    //comparing 'y' positions of two puzzles
     void ComparePositionsY(GameObject other, string direction)
     {
         float differenceX = transform.position.x - other.transform.position.x;
         float differenceY = transform.position.y - other.transform.position.y;
 
-        if (differenceX < offset && differenceX > -offset) // if  -offset < x < offset
+        if (Mathf.Abs(differenceX) < offset ) // if  -offset < x < offset
         {
             if ((direction == "down" && differenceY < 0) || (direction == "up" && differenceY > 0))
             {
@@ -174,54 +245,87 @@ public class MovePuzzle : MonoBehaviour
             }
         }
     }
+    // set parent position, and all children with it
     void ParentPos(GameObject other)
     {
-        if (transform.parent != null)
+        int signX = 1, signY = 1;
+        switch(other.GetComponent<Puzzle>().currentAngle)
         {
-            transform.parent.position = other.transform.position
-                        + new Vector3((transform.parent.GetComponent<Puzzle>().Col - other.GetComponent<Puzzle>().Col) * boxCollider2D.size.x * 2,
-                        (-transform.parent.GetComponent<Puzzle>().Row + other.GetComponent<Puzzle>().Row) * boxCollider2D.size.y * 2);
+            case 90:
+                signY = -1;
+                break;
+            case 180:
+                signX = -1;
+                signY = -1;
+                break;
+            case 270:
+                signX = -1;
+                break;
+
+        }
+
+        if (other.GetComponent<Puzzle>().currentAngle == 90 || other.GetComponent<Puzzle>().currentAngle == 270)
+        {
+            if (transform.parent != null)
+            {
+                transform.parent.position = other.transform.position
+                            + new Vector3(signX * (transform.parent.GetComponent<Puzzle>().Row - other.GetComponent<Puzzle>().Row) * puzzleSize * 2,
+                            signY * (-transform.parent.GetComponent<Puzzle>().Col + other.GetComponent<Puzzle>().Col) * puzzleSize * 2);
+            }
+            else
+                transform.position = other.transform.position
+                            + new Vector3(signX * (transform.GetComponent<Puzzle>().Row - other.GetComponent<Puzzle>().Row) * puzzleSize * 2,
+                            signY * (-transform.GetComponent<Puzzle>().Col + other.GetComponent<Puzzle>().Col) * puzzleSize * 2);
         }
         else
-            transform.position = other.transform.position
-                        + new Vector3((transform.GetComponent<Puzzle>().Col - other.GetComponent<Puzzle>().Col) * boxCollider2D.size.x * 2,
-                        (-transform.GetComponent<Puzzle>().Row + other.GetComponent<Puzzle>().Row) * boxCollider2D.size.y * 2);
-
+        {
+            if (transform.parent != null)
+            {
+                transform.parent.position = other.transform.position
+                            + new Vector3(signX * (transform.parent.GetComponent<Puzzle>().Col - other.GetComponent<Puzzle>().Col) * puzzleSize * 2,
+                            signY * (-transform.parent.GetComponent<Puzzle>().Row + other.GetComponent<Puzzle>().Row) * puzzleSize * 2);
+            }
+            else
+                transform.position = other.transform.position
+                            + new Vector3(signX * (transform.GetComponent<Puzzle>().Col - other.GetComponent<Puzzle>().Col) * puzzleSize * 2,
+                            signY * (-transform.GetComponent<Puzzle>().Row + other.GetComponent<Puzzle>().Row) * puzzleSize * 2);
+        }
     }
     
-
+    // setting parent
     void SetParent()
     {
-        if (transform.parent != null)
+        if (transform.parent != null) // if moving puzzle has parent
         {
-            if (neibor.transform.parent != null)
+            if (neibor.transform.parent != null) // if neibor to connect has parent
             {
                 NeiborParent(neibor.transform.parent, transform.parent);
             }
-            else
+            else // if neibor to connect doesnt have parent
             {
                 NeiborParent(neibor.transform, transform.parent);
             }
         }
-        else
+        else // if moving puzzle doesnt have parent
         {
-            if (neibor.transform.parent != null)
+            if (neibor.transform.parent != null) // if neibor to connect has parent
             {
                 NeiborParent(neibor.transform.parent, transform);
             }
-            else
+            else // if neibor to connect doesnt have parent
             {
                 NeiborParent(neibor.transform, transform);
             }   
         }
     }
+    // set all children to new parent
     void NeiborParent(Transform neibor, Transform parent)
     {
-        neibor.SetParent(parent);
-        foreach (Transform item in neibor.GetComponentInChildren<Transform>())
+        parent.SetParent(neibor);
+        foreach (Transform item in parent.GetComponentInChildren<Transform>())
         {
             if (item.tag == "puzzle")
-                item.SetParent(parent);
+                item.SetParent(neibor);
         }
     }
 }

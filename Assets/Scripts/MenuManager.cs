@@ -2,26 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public static MenuManager Instance;
-    private bool[] levels;
-    public bool[] Levels { get => levels; set { levels = value; } }
-    private float[] time;
-    public float[] Time { get => time; set { time = value; } }
     [SerializeField] private Sprite locked;
-    public Sprite Locked { get => locked; set { locked = value; } }
-    private const int totalLevels = 7;
-    public int TotalLevels { get => totalLevels; private set { } }
     [SerializeField] private Data background;
-    public Data Background { get => background; private set { } }
+    [SerializeField] private GameObject volume;
+    [SerializeField] private GameObject Title;
+
+    public static MenuManager Instance;
+    private const int totalLevels = 7;
+    private bool[] levels;
+    private float[] time;
     private bool isSoundOn = true;
 
-    public bool IsSoundOn { get => isSoundOn;  set { isSoundOn = value; } }
+    public bool[] Levels { get => levels; set { levels = value; } }
+    
+    public float[] Time { get => time; set { time = value; } }
+   
+    public Sprite Locked { get => locked; set { locked = value; } }
+    
+    public int TotalLevels { get => totalLevels; private set { } }
+   
+    public Data Background { get => background; private set { } }
 
-    [SerializeField] private GameObject Title;
+    public bool IsSoundOn { get => isSoundOn;  set { isSoundOn = value; } }
+   
 
     private void Awake()
     {
@@ -35,7 +42,7 @@ public class MenuManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         LoadInfo();
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
     }
     private void Start()
     {

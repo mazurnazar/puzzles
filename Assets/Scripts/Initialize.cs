@@ -4,11 +4,12 @@ using UnityEngine;
 public class Initialize : MonoBehaviour
 {
     [SerializeField] private GameObject backgroundPrefab;
-    private Puzzle [,] puzzles;
     [SerializeField] private Data backgroundData;
     [SerializeField] private GameObject puzzleImage;
-    private const int rows = 4, cols = 8;
     [SerializeField] private GameObject[] Puzzles;
+    private Puzzle[,] puzzles;
+
+    private const int rows = 4, cols = 8;
     public enum Difficulty { easy, medium, hard};
     public Difficulty difficulty;
     private void Start()
@@ -91,7 +92,8 @@ public class Initialize : MonoBehaviour
                 {
                     Puzzles[index].SetActive(true);
                     Puzzles[index].transform.position = SetRandomPos();
-                    Puzzles[index].transform.Rotate(0, 0, SetRandomAngle(difficulty));
+                    puzzles[i, j].currentAngle = SetRandomAngle(difficulty);
+                    Puzzles[index].transform.Rotate(0, 0, puzzles[i, j].currentAngle);
                 }
                 index++;
             }
